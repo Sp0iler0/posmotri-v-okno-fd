@@ -212,7 +212,6 @@ ol {
   gap: 5px;
   width: fit-content;
   cursor: pointer;
-  border: 1px solid transparent;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -225,25 +224,33 @@ ol {
 }
 
 .search-form__textfield {
-  font: inherit;
-  color: #fff;
-  background-color: transparent;
-  border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  min-inline-size: 225px;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
   appearance: none;
   padding: 2px 0;
+  min-width: 225px;
   outline: none;
 }
+
+.search-form__textfield:focus,
+.search-form__textfield:focus-visible {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
 
 .search-form__label:has(.search-form__textfield:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
-}
-
-.search-form__label:has(.search-form__textfield:active) {
-  outline-offset: 0;
 }
 
 .search-form__pseudo-checkbox {
